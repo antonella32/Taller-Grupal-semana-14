@@ -16,7 +16,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
     // Validación de email
     const email = document.getElementById('email');
     const emailInvalidFeedback = email.nextElementSibling;
-    
+
     if (email.value.trim() === '') {
         emailInvalidFeedback.textContent = 'Por favor, ingresa tu e-mail.';
         email.classList.add('is-invalid');
@@ -28,7 +28,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
     } else {
         email.classList.remove('is-invalid');
     }
-    
+
 
 
     // Validación de contraseñas
@@ -52,29 +52,29 @@ document.querySelector('form').addEventListener('submit', function (event) {
     }
 
     // Validación del checkbox de términos y condiciones
-const termsCheckbox = document.getElementById('terminos');
-const botonRojo = document.getElementById('botonRojo');
-const modalTitle = document.getElementById('modalTitle');
-const termsLabel = document.getElementById('termsLabel');
-const termsFeedback = document.getElementById('termsFeedback');
+    const termsCheckbox = document.getElementById('terminos');
+    const botonRojo = document.getElementById('botonRojo');
+    const modalTitle = document.getElementById('modalTitle');
+    const termsLabel = document.getElementById('termsLabel');
+    const termsFeedback = document.getElementById('termsFeedback');
 
 
-if (!termsCheckbox.checked) {
-    botonRojo.classList.add('text-danger');
-    termsLabel.classList.add('text-danger'); 
-    termsFeedback.style.display = 'block'; 
-    allValid = false;
-} else {
-    botonRojo.classList.remove('text-danger'); 
-    termsLabel.classList.remove('text-danger'); 
-    termsLabel.classList.add('text-success'); 
-    termsFeedback.style.display = 'none'; 
-}
+    if (!termsCheckbox.checked) {
+        botonRojo.classList.add('text-danger');
+        termsLabel.classList.add('text-danger');
+        termsFeedback.style.display = 'block';
+        allValid = false;
+    } else {
+        botonRojo.classList.remove('text-danger');
+        termsLabel.classList.remove('text-danger');
+        termsLabel.classList.add('text-success');
+        termsFeedback.style.display = 'none';
+    }
 
-// Evita el envío si no está validado
-if (!allValid) {
-    event.preventDefault();
-    event.stopPropagation();
-}
+    // Evita el envío si no está validado
+    if (!allValid) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
 
 });
